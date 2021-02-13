@@ -1,3 +1,8 @@
+// Author: Md. Hasibur Rashid
+// Task Description: Bug fixing
+// Live: https://hasibcsepstubd.github.io/JS-Debug/index.html
+// Code: https://github.com/hasibcsepstubd/JS-Debug
+
 const imagesArea = document.querySelector('.images');
 const gallery = document.querySelector('.gallery');
 const galleryHeader = document.querySelector('.gallery-header');
@@ -31,7 +36,7 @@ const showImages = (images) => {
 const getImages = (query) => {
   fetch(`https://pixabay.com/api/?key=${KEY}=${query}&image_type=photo&pretty=true`)
     .then(response => response.json())
-    .then(data => showImages(data.hitS))
+    .then(data => showImages(data.hits)) // fixing the bug-1
     .catch(err => console.log(err))
 }
 
@@ -39,7 +44,7 @@ let slideIndex = 0;
 const selectItem = (event, img) => {
   let element = event.target;
   element.classList.add('added');
- 
+
   let item = sliders.indexOf(img);
   if (item === -1) {
     sliders.push(img);
@@ -67,7 +72,16 @@ const createSlider = () => {
   document.querySelector('.main').style.display = 'block';
   // hide image aria
   imagesArea.style.display = 'none';
-  const duration = document.getElementById('duration').value || 1000;
+
+  // fixing bug-3 ===================================================
+  let duration = document.getElementById('duration').value;
+  if (duration > 500) {
+    duration = duration;
+  }
+  else {
+    duration = 1000;
+  }
+// ===================================================================
   sliders.forEach(slide => {
     let item = document.createElement('div')
     item.className = "slider-item";
@@ -120,3 +134,14 @@ searchBtn.addEventListener('click', function () {
 sliderBtn.addEventListener('click', function () {
   createSlider()
 })
+
+
+// Searching event listener for Enter button ==========================
+const input = document.getElementById("search");
+input.addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("search-btn").click();
+  }
+});
+
