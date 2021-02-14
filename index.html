@@ -20,27 +20,55 @@
     <h2 class="mt-4 mb-3 text-center">Search Image for Create Slider</h2>
     <div class="form-inline mt-3 d-flex justify-content-center">
       <div class="input-group col-md-6 mb-4 mt-2">
-        <input type="text" class="form-control" id="search" placeholder="nature">
+        <input type="text" class="form-control" id="search" placeholder="bird" value="bird">
       </div>
       <button type="button" id="search-btn" class="btn btn-primary mb-2">Search</button>
+    </div>
+    <!-- spinner  -->
+    <div class="d-flex justify-content-center mb-4">
+      <div id="search-spinner" class="d-none">
+        <div class="spinner-grow text-primary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-secondary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-success" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-danger" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-warning" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-info" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div class="spinner-grow text-dark" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
     </div>
     <section class="images">
       <div class="justify-content-around align-items-center mt-3 gallery-header mb-2">
         <h3 class="head-title text-center">Select image for create slider</h3>
-        <div class="input-group col-md-3 mb-2 mb-md-0">        
+        <div class="input-group col-md-3 mb-2 mb-md-0">
           <!-- fixing bug-2  -->
           <input class="form-control" id="duration" placeholder="slider change duration" type="number" min="1000">
         </div>
         <button id="create-slider" class="btn btn-primary px-5">Create slider</button>
       </div>
-      <div class="mt-3 row gallery">
+      <div class="mt-3 row gallery ">
 
       </div>
     </section>
     <!-- slider -->
     <div class="main">
       <!-- New feature Back navigation  -->
-      <div><button type="button" id="back-btn" class="btn btn-primary">< Back</button></div>
+      <div><button type="button" id="back-btn" class="btn btn-primary">
+          < Back</button>
+      </div>
       <section class="mt-5" id="sliders">
 
       </section>
@@ -50,12 +78,13 @@
       </div>
     </div>
   </div>
-  
-<footer>
-  <div class="copyright"><p>All rights are reserved by <a href="https://github.com/hasibcsepstubd" target="_blank" rel="noopener noreferrer">Md. Hasibur Rashid</a></p></div>
-</footer>
 
-
+  <footer>
+    <div class="copyright">
+      <p>All rights are reserved by <a href="https://github.com/hasibcsepstubd" target="_blank"
+          rel="noopener noreferrer">Md. Hasibur Rashid</a></p>
+    </div>
+  </footer>
   <!-- Optional JavaScript -->
   <script src="./app.js"></script>
 </body>
