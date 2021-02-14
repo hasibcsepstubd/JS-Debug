@@ -135,7 +135,7 @@ const changeSlide = (index) => {
 searchBtn.addEventListener('click', function () {
   showSpinner();
   document.querySelector('.main').style.display = 'none';
-  clearInterval(timer);
+  // clearInterval(timer);
   const search = document.getElementById('search');
   getImages(search.value)
   sliders.length = 0;
