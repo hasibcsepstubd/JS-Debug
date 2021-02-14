@@ -49,7 +49,13 @@ const selectItem = (event, img) => {
   if (item === -1) {
     sliders.push(img);
   } else {
-    alert('Hey, Already added !')
+    // fixing bug-5, introduce toggle features
+    // alert('Hey, Already added !')
+    // sliders.remove(img);
+    // sliders = sliders.filter(img => sliders.indexOf(img) === -1);
+    delete sliders[img];
+    console.log(sliders);
+    element.classList.remove('added');
   }
 }
 var timer
