@@ -9,6 +9,7 @@ const galleryHeader = document.querySelector('.gallery-header');
 const searchBtn = document.getElementById('search-btn');
 const sliderBtn = document.getElementById('create-slider');
 const sliderContainer = document.getElementById('sliders');
+const backButton = document.getElementById('back-btn');
 // selected image 
 let sliders = [];
 
@@ -21,6 +22,7 @@ const KEY = '15674931-a9d714b6e9d654524df198e00&q';
 // show images 
 const showImages = (images) => {
   imagesArea.style.display = 'block';
+  backButton.style.display = 'none';
   gallery.innerHTML = '';
   // show gallery title
   galleryHeader.style.display = 'flex';
@@ -51,10 +53,7 @@ const selectItem = (event, img) => {
   } else {
     // fixing bug-5, introduce toggle features
     // alert('Hey, Already added !')
-    // sliders.remove(img);
-    // sliders = sliders.filter(img => sliders.indexOf(img) === -1);
-    delete sliders[img];
-    console.log(sliders);
+    delete sliders[item];
     element.classList.remove('added');
   }
 }
@@ -76,8 +75,11 @@ const createSlider = () => {
 
   sliderContainer.appendChild(prevNext)
   document.querySelector('.main').style.display = 'block';
-  // hide image aria
+  
+  // hide image aria and show back button ==========================
+  backButton.style.display = 'block';
   imagesArea.style.display = 'none';
+  
 
   // fixing bug-3 ===================================================
   let duration = document.getElementById('duration').value;
@@ -151,3 +153,11 @@ input.addEventListener("keyup", function (event) {
   }
 });
 
+
+// New Feature-1:  Back button event listener ==========================
+backButton.addEventListener('click', function () {
+    imagesArea.style.display = 'block';
+     document.querySelector('.main').style.display = 'none';
+})
+
+// New Feature-2:  Loading animation  ==================================

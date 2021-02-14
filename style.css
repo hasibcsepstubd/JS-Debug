@@ -24,7 +24,8 @@
 }
 
 img {
-  height: 400px;
+  min-height: 250px;
+  /* height: 400px; */
   object-fit: cover;
 }
 
@@ -63,4 +64,9 @@ img {
     height: 300px;
     width: 90%;
   }
+}
+
+.copyright{
+  margin-top: 50px;
+  text-align: center;  
 }
